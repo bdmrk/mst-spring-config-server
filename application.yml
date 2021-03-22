@@ -1,0 +1,25 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    hostname: localhost
+    
+microservice:
+  PAYMENT-SERVICE:
+    endpoints:
+      endpoint:
+        uri: http://PAYMENT-SERVICE/payment/doPayment
+  Order-SERVICE:
+    endpoints:
+      endpoint:
+        uri: http://Order-SERVICE/order/bookOrder
+ 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+
