@@ -1,3 +1,15 @@
+spring:
+  application:
+    name: CONFIG-SERVER
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Java-Techie-jt/cloud-config-server
+
+server:
+  port: 9196
+
 eureka:
   client:
     register-with-eureka: true
@@ -5,15 +17,4 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka/
   instance:
-    hostname: localhost
-    
-    
-microservice:
-  payment-service:
-    endpoints:
-      endpoint:
-        uri: http://PAYMENT-SERVICE/payment/doPayment
-  order-service:
-    endpoints:
-      endpoint:
-        uri: http://ORDER-SERVICE/order/bookOrder  
+    hostname: localhost 
